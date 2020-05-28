@@ -9,7 +9,6 @@ module.exports = {
       'airbnb-base',
     ],
     globals: {
-      Console: 'readonly',
       Atomics: 'readonly',
       SharedArrayBuffer: 'readonly',
     },

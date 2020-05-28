@@ -9,15 +9,15 @@ module.exports = (req, res, next) => {
     const { userId } = decodedToken;
 
     if (req.body && req.body.userId !== userId) {
-      res.status(401).json({
-        error: new Error('User ID is invalid!')
+      return res.status(401).json({
+        errorMsg: ('User ID is invalid!')
       });
-    } else {
-      next();
     }
+    return next();
   } catch (error) {
-    res.status(401).json({
-      error: new Error('You\'re not authorized to make this request!')
+    return res.status(401).json({
+      errorMsg: ('You\'re not authorized to make this request!'),
+      error
     });
   }
 };

@@ -7,4 +7,4 @@ const router = express.Router();
 router.post('/', userCtrl.login);
 router.post('/signup', userCtrl.signup);
 
-module.export = router;
+module.exports = router;
