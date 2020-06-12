@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const DB = require('./middlewares/DB');
+const httpLogger = require('./middlewares/httpLogger');
 const userRoute = require('./routes/user');
 const coopRoute = require('./routes/cooperative');
 
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(httpLogger);
 app.use(bodyParser.json());
 
 app.use('/files/cooperative/documents', express.static(path.join(__dirname, 'documents')));
