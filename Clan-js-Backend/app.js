@@ -20,6 +20,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 
 app.use('/files/cooperative/documents', express.static(path.join(__dirname, 'documents')));
+app.use('/files/cooperative/images', express.static(path.join(__dirname, 'images')));
 // app.use('/files/user-images', express.static(path.join(__dirname, 'images')));
 
 // API Routes goes here

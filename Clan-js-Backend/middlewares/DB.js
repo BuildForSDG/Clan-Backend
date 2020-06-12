@@ -8,10 +8,10 @@ exports.connect = (req, res, next) => {
     useUnifiedTopology: true,
     useCreateIndex: true
   }).then(() => {
-    console.log('Connected to Mongo DB successfully!');
+    // console.log('Connected to Mongo DB successfully!');
     next();
   }).catch((error) => {
-    console.log('Error connecting to Mongo DB!');
+    // console.log('Error connecting to Mongo DB!');
     res.status(500).json({
       message: 'Error connecting to Mongo DB!',
       error: error.message
