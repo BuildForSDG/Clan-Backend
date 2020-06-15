@@ -21,6 +21,9 @@
     "jest": "^25.5.4",
     "nodemon": "^2.0.4"
   },
+  "engines": { 
+    "node": "8.9.4" 
+  },
   "license": "MIT",
   "main": "server.js",
   "name": "clan-js-backend",
