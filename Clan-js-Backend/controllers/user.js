@@ -22,14 +22,14 @@ exports.signup = (req, res) => {
         errorMsg: 'Sign up failed',
         error: error.message
       });
-      console.log(error);
+      // console.log(error);
     });
   }).catch((error) => {
     res.status(401).json({
       errorMsg: 'Wrong API call! Follow the documentation.',
       error: error.message
     });
-    console.log(error);
+    // console.log(error);
   });
 };
 
@@ -67,6 +67,10 @@ exports.login = (req, res) => {
       });
     });
   }).catch((error) => {
-    console.log(error);
+    res.status(401).json({
+      errorMsg: 'An error occured',
+      error: error.message
+    });
+    // console.log(error);
   });
 };

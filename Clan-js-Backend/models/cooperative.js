@@ -10,7 +10,10 @@ const coopSchema = mongoose.Schema({
   slotsExhaustedStatus: { type: Boolean, default: false },
   activeStatus: { type: Boolean, default: true },
   closeVote: { type: Number, default: 0 },
-  userId: { type: String, required: true }
+  userId: { type: String, required: true },
+  members: [{
+    userId: { type: String, required: true, unique: true }
+  }]
 });
 
 coopSchema.plugin(uniqueValidator);
